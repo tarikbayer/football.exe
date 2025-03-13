@@ -1,9 +1,9 @@
-function Event() {
+function Event(props) {
   return (
     <div>
-      <h3>Title</h3>
-      <h4>Year</h4>
-      <p>Description</p>
+      <h3>{props.name}</h3>
+      <h4>{props.year}</h4>
+      <p>{props.description}</p>
     </div>
   );
 }
