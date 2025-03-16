@@ -1,0 +1,21 @@
+.timeline {
+  color: grey;
+  position: relative;
+  padding: 80px;
+}
+
+.timeline::before {
+  content: "";
+  left: 30px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: grey;
+}
+
+.yearContainer {
+  font-size: large;
+  font-weight: bold;
+  border-bottom: 1cm solid darkblue;
+}
