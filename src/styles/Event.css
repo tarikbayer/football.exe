@@ -1,0 +1,24 @@
+.eventCard {
+  border: 1px solid darksalmon;
+  background-color: white;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-left: 20px;
+}
+
+.eventCard::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: darkblue;
+  border: 2px solid white;
+  border-radius: 50%;
+}

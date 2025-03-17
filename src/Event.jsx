@@ -2,7 +2,7 @@ import "./styles/Event.css";
 
 function Event({ title, year, description }) {
   return (
-    <div>
+    <div className="eventCard">
       <h3>{title}</h3>
       <h4>{year}</h4>
       <p>{description}</p>

@@ -6,10 +6,10 @@
 
 .timeline::before {
   content: "";
-  left: 30px;
+  left: 20px;
   position: absolute;
   top: 0;
-  width: 2px;
+  width: 1px;
   height: 100%;
   background-color: grey;
 }
@@ -17,5 +17,10 @@
 .yearContainer {
   font-size: large;
   font-weight: bold;
-  border-bottom: 1cm solid darkblue;
+  border-bottom: 0.5cm solid darkblue;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 40px;
 }

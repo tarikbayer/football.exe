@@ -23,16 +23,14 @@ function Timeline() {
         />
       </div>
       <div className="yearContainer">
-        <div className="yearHeader">
-          <h2>2018</h2>
-          <Event
-            title={"VAR"}
-            year={"2018/19"}
-            description={
-              "The use of video assistant referees (VARs) in football was first included in the Laws of the Game in 2018/19. After the 2016 introduction in CUP football in Europe, the VAR system was introduced in top-flight European football league competitions by Bundesliga and the Serie A at the beginning of the 2017–18 season and by La Liga at the beginning of the 2018–19 season."
-            }
-          />
-        </div>
+        <h2 className="yearHeader">2018</h2>
+        <Event
+          title={"VAR"}
+          year={"2018/19"}
+          description={
+            "The use of video assistant referees (VARs) in football was first included in the Laws of the Game in 2018/19. After the 2016 introduction in CUP football in Europe, the VAR system was introduced in top-flight European football league competitions by Bundesliga and the Serie A at the beginning of the 2017–18 season and by La Liga at the beginning of the 2018–19 season."
+          }
+        />
       </div>
     </div>
   );
