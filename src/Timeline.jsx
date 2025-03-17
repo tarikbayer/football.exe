@@ -4,6 +4,9 @@ import "./styles/Timeline.css";
 function Timeline() {
   return (
     <div className="timeline">
+      <div className="stickyHeader">
+        <h2>Football Tech Timeline</h2>
+      </div>
       <div className="yearContainer">
         <h2 className="yearHeader">2022</h2>
         <Event
