@@ -1,7 +1,17 @@
 import Event from "./Event";
 import "./styles/Timeline.css";
+import { useState } from "react";
 
 function Timeline() {
+  const [events, setEvents] = useState([
+    {
+      title: "Semi Automatic Offside Tech",
+      year: "2022",
+      description: "It came during 2022 World Cup in Qatar",
+    },
+    { title: "First Event", year: "2022", description: "Something happened" },
+  ]);
+
   return (
     <div className="timeline">
       <div className="stickyHeader">
@@ -9,7 +19,10 @@ function Timeline() {
       </div>
       <div className="yearContainer">
         <h2 className="yearHeader">2022</h2>
-        <Event
+        {events.map((event) => (
+          <Event key={event.title} {...event} />
+        ))}
+        {/* <Event
           title={"Semi Automatic Offside Tech"}
           year={"2022"}
           description={"It came during 2022 World  Cup in Qatar"}
@@ -23,7 +36,7 @@ function Timeline() {
           title="Second Event"
           year="2022"
           description="Another event in 2022"
-        />
+        /> */}
       </div>
       <div className="yearContainer">
         <h2 className="yearHeader">2018</h2>
