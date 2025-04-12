@@ -2,6 +2,10 @@ import Event from "./Event";
 import "./styles/Timeline.css";
 import { useState } from "react";
 
+// --------------------
+// State
+// --------------------
+
 function Timeline() {
   const [events, setEvents] = useState([
     {
@@ -22,26 +26,53 @@ function Timeline() {
     },
   ]);
   const [selectedYear, setSelectedYear] = useState("all");
+  const [sortOrder, setSortOrder] = useState("asc");
+
+  // --------------------
+  // Derived Data
+  // --------------------
 
   const uniqueYears = [...new Set(events.map((event) => event.year))];
-
   const filteredYears = selectedYear === "all" ? uniqueYears : [selectedYear];
+  const sortedYears = [...filteredYears].sort((a, b) => {
+    const yearA = +a;
+    const yearB = +b;
 
-  function handleYearSelection(event) {
+    if (sortOrder === "asc") {
+      return yearA - yearB;
+    } else {
+      return yearB - yearA;
+    }
+  });
+
+  const handleYearSelection = (event) => {
     setSelectedYear(event.target.value);
-  }
+  };
+
+  const toggleSortOrder = () => {
+    if (sortOrder === "asc") {
+      setSortOrder("desc");
+    } else {
+      setSortOrder("asc");
+    }
+  };
 
   return (
     <div className="timeline">
       <div className="stickyHeader">
         <h2>Football Tech Timeline</h2>
       </div>
-      <select value={selectedYear} onChange={handleYearSelection}>
-        <option value="all">All</option>
-        <option value="2022">2022</option>
-        <option value="2018">2018</option>
-      </select>
-      {filteredYears.map((year) => (
+      <div className="controls">
+        <select value={selectedYear} onChange={handleYearSelection}>
+          <option value="all">All</option>
+          <option value="2022">2022</option>
+          <option value="2018">2018</option>
+        </select>
+        <button onClick={toggleSortOrder}>
+          Sort {sortOrder === "asc" ? "↑" : "↓"}
+        </button>
+      </div>
+      {sortedYears.map((year) => (
         <div className="yearContainer" key={year}>
           <h2>{year}</h2>
           {events
